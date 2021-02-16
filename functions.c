@@ -4,6 +4,9 @@ extern int _contador = 0;
 
 int suma(int);
 int fibonaci(int);
+char functionA(char);
+char functionB(char);
+int testFunction(char, char);
 
 void functionTest(void)
 {
@@ -24,7 +27,9 @@ int main(void)
     }
     _sum += suma(_limit);
     printf("Suma: %d\n\n", _sum);
-    for(_i=0; _i<45;_i++) printf("fibonaci(%d) = %d\n", _i, fibonaci(_i));
+    for(_i=0; _i<10;_i++) printf("fibonaci(%d) = %d\n", _i, fibonaci(_i));
+
+    int sumF = testFunction(functionA('A'), functionB('B')); // Primero se ejecuta la funcionB. Derecha a Izquierda <-
     return 0;
 }
 
@@ -39,4 +44,18 @@ int fibonaci(int __index)
 {
     if (__index <= 1) return __index;
     else return fibonaci(__index-1) + fibonaci(__index-2);
+}
+
+char functionA(char singleChar) {
+    printf("%c\n", singleChar);
+    return singleChar;
+}
+
+char functionB(char singleChar) {
+    printf("%c\n", singleChar);
+    return singleChar;
+}
+
+int testFunction(char charA, char charB) {
+    return charA + charB;
 }
