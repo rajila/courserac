@@ -56,7 +56,7 @@ list* swapping(list *__nodePrev, list *__nodeCurrent, list *__nodeNext)
     if (__nodePrev != NULL ) __nodePrev->_next = __nodeNext; // change pointer of node prev
     __nodeNext->_next = __nodeCurrent;
     __nodeCurrent->_next = _tmp;
-    return __nodeNext; // return next node as current node
+    return __nodeNext; // return next node as current node. Verificas si cambiamos de direccion sin hacer return.
 }
 
 // function for init List
