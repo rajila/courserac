@@ -11,6 +11,8 @@
 
 enum day { Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado };
 typedef enum day Day;
+typedef enum choices {left, left_center = 2, right_center, right = 5} choices;
+enum myfoods{butter = 2, milk = 5, cheese = 8, eggs};
 
 void printDay(Day);
 Day nextDay(Day);
@@ -27,6 +29,20 @@ int main(void) {
     srand(time(0));
     // call Macro
     PRINTDATA;
+
+    // test
+    printf("\n%d\n", eggs);
+    int a = 2, b = 5, c = 8;
+    printf("  a && b  = %d \n ",  a && b);
+    printf(" b %% a   = %d \n ", b % a );
+    printf(" a / b    = %d \n " , a/b);
+    printf(" 2 * a + 1 < b = %d \n ", 2*a + 1 < b);
+    printf(" b <= c = %d \n "  , b<= c);
+    printf(" !!c = %d \n " , !!c);
+    printf(" c > 2 && a > 6 = %d \n " , c> 2 && a > 6);
+    printf(" b == 2||a != 4 = %d \n ", b == 2 || a != 4 );
+    printf(" (a + b) * c-- = %d \n ",  (a + b) * c-- );
+    printf(" c = ++b = %d \n ",c = ++b);
 
     return 0;
 }
